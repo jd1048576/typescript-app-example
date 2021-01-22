@@ -1,0 +1,41 @@
+type Episode {
+  airDate: String!
+  episodeNumber: String!
+  id: Int!
+  name: String!
+  overview: String!
+  productionCode: String!
+  stillPath: String!
+  voteAverage: Int!
+  voteCount: Int!
+}
+
+type Season {
+  airDate: String!
+  episodes: [Episode!]!
+  id: Int!
+  name: String!
+  overview: String!
+  posterPath: String
+  seasonNumber: Int!
+}
+
+type Show {
+  backdropPath: String
+  episodeRunTime: Int!
+  id: String!
+  name: String!
+  overview: String!
+  popularity: Float!
+  posterPath: String
+  seasons: [Season!]!
+  status: String!
+  tagline: String!
+  type: String!
+  voteAverage: Float!
+  voteCount: Int!
+}
+
+type Query {
+  show(id: ID!): Show!
+}
